@@ -42,15 +42,31 @@ São três linhas de revisão. Nenhuma basta sozinha:
 
 Requisitos: [Claude Code](https://claude.com/claude-code), Python 3.12+ (ou [uv](https://docs.astral.sh/uv/)) e, de preferência, o SkillSpector.
 
-```bash
-# 1. Clone direto na pasta de skills do Claude Code
-git clone https://github.com/Phb29/atlas-sentinel.git ~/.claude/skills/atlas-sentinel
+**1. Clone direto na pasta de skills do Claude Code.**
 
-# 2. (Recomendado) instale o SkillSpector da NVIDIA
-uv tool install skillspector
+Linux e macOS:
+
+```bash
+git clone https://github.com/Phb29/atlas-sentinel.git ~/.claude/skills/atlas-sentinel
 ```
 
-Sem o SkillSpector, a skill avisa e segue com as outras duas linhas.
+Windows (PowerShell):
+
+```powershell
+git clone https://github.com/Phb29/atlas-sentinel.git "$env:USERPROFILE\.claude\skills\atlas-sentinel"
+```
+
+Para usar a skill só num projeto, clone em `<projeto>/.claude/skills/atlas-sentinel`.
+
+**2. (Recomendado) Instale o SkillSpector da NVIDIA**, do repositório oficial e com a versão fixa:
+
+```bash
+uv tool install "git+https://github.com/NVIDIA/SkillSpector.git@v2.13.3"
+```
+
+Não use `pip install skillspector` nem `uv tool install skillspector` sem a URL: isso busca no PyPI qualquer pacote com esse nome, que pode não ser o da NVIDIA. Sem o SkillSpector, a skill avisa e segue com as outras duas linhas.
+
+**3. Confira** que a skill aparece no Claude Code: digite `/atlas-sentinel`. Para atualizar depois, entre na pasta da skill e rode `git pull`. O sha256 da pasta muda, e é bom revisar a nova versão com a própria skill.
 
 ## Uso
 
