@@ -1,0 +1,18 @@
+Atlas-Sentinel
+Copyright 2026 Paulo Henrique Batista de Jesus
+
+This project is a modified derivative of the "skill-inspector" skill from
+NVIDIA SkillSpector (https://github.com/NVIDIA/skillspector),
+licensed under the Apache License, Version 2.0.
+
+Changes made to the original:
+- SKILL.md rewritten in Portuguese, with a reviewer self-defense section,
+  an AI-agent threat model, mandatory REJECT rules, version pinning by sha256,
+  batch audit mode and a Windows-safe scanner command.
+- Added scripts/checar.py, a read-only, standard-library-only checker for
+  attacks against AI agents that SkillSpector's static rules do not cover.
+- Added evals/eval.py, an evaluation harness with inert bait skills and
+  clean controls.
+
+Atlas-Sentinel does not bundle SkillSpector. It calls the separately
+installed `skillspector` command when available.
