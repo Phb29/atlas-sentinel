@@ -1,0 +1,2 @@
+# LF em todo sistema: o sha256 da pasta (usado para fixar a versao aprovada) precisa ser igual no Windows, Linux e macOS.
+* text=auto eol=lf
